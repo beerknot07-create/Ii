@@ -1,0 +1,59 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+-- สร้าง UI
+local Window = Rayfield:CreateWindow({
+    Name = "zxtata | PRO SCRIPT",
+    LoadingTitle = "Loading zxtata Resources...",
+    LoadingSubtitle = "Asset ID: 1784287963045",
+    KeySystem = false
+})
+
+-- Tab 1: Farming
+local FarmTab = Window:CreateTab("Farming", 1784287963045)
+FarmTab:CreateToggle({
+    Name = "Auto Farm [Coin_Server]",
+    CurrentValue = false,
+    Callback = function(Value)
+        -- ว่างเปล่า ไม่มีการทำงานใดๆ
+        print("Auto Farm Toggled: " .. tostring(Value))
+    end,
+})
+
+-- Tab 2: Visuals (ESP)
+local VisualTab = Window:CreateTab("Visuals", 1784287963045)
+VisualTab:CreateToggle({
+    Name = "ESP Box [Wall Hack]",
+    CurrentValue = false,
+    Callback = function(Value)
+        -- ว่างเปล่า
+    end,
+})
+VisualTab:CreateToggle({
+    Name = "ESP Chams [Full Render]",
+    CurrentValue = false,
+    Callback = function(Value)
+        -- ว่างเปล่า
+    end,
+})
+
+-- Tab 3: Player
+local PlayerTab = Window:CreateTab("Player", 1784287963045)
+PlayerTab:CreateSlider({
+    Name = "WalkSpeed Modifier",
+    Range = {16, 250},
+    Increment = 1,
+    Suffix = "Speed",
+    CurrentValue = 16,
+    Callback = function(Value)
+        -- ว่างเปล่า
+    end,
+})
+PlayerTab:CreateButton({
+    Name = "Infinite Jump",
+    Callback = function()
+        -- ว่างเปล่า
+    end,
+})
+
+-- ปิดการโหลดให้ดูเป็นธรรมชาติ
+Rayfield:LoadConfiguration()
